@@ -9,4 +9,4 @@ output = html.decode('utf-8')
 obj = json.loads(output)
 
 for item in obj:
-    print(obj)
+    print(item)
