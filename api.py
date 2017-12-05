@@ -7,16 +7,16 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     page ="<title>HP</title>"
-    page += "<h1>You will see some Harry Porter stuff</h1>"
-    page += "<form action ='/HarryPorter'><input type='submit' value ='Click for HP'></input></form>"
+    page += "<h1>You will see some Harry Potter stuff</h1>"
+    page += "<form action ='/HarryPotter'><input type='submit' value ='Click for HP'></input></form>"
     return page
 
-@app.route("/HarryPorter")
+@app.route("/HarryPotter")
 def HarryPorterInfo():
     rec = requests.get("http://www.projectdoama.com/api/v1/getMovieInfo/Harry")
     data = json.loads(rec.text)
     page = "<title>HP</title>"
-    page += "<h1>Some Harry Porter movies we have on the server</h1>"
+    page += "<h1>Some Harry Potter movies we have on the server</h1>"
     page += "<ul>"
     for item in data:
         page +="<li>%s</li>"%item['title']
